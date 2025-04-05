@@ -1,7 +1,7 @@
 const express = require('express');
 const db = require('./database');
 const app = express();
-const port = 3000;
+const port = 8000; // Cambié el puerto de 3000 a 8000
 
 // Middleware para manejar JSON
 app.use(express.json());
@@ -89,7 +89,7 @@ app.delete('/api/users/:id', (req, res) => {
   });
 });
 
-// Iniciar el servidor
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+// Iniciar el servidor en el puerto 8000 y en la IP pública
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server running at http://18.205.23.87:${port}`);
 });
